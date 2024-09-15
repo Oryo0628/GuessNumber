@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;  
 
@@ -14,6 +15,7 @@ public class NumberGenerator : MonoBehaviour
     private int number;
     private string numberStr;
     public string NumberStr => numberStr;
+    private int[] randomDigits;
 
     public void CreateNumber()
     {
@@ -21,22 +23,28 @@ public class NumberGenerator : MonoBehaviour
         // 0から9の数字リストを作成
         List<int> digits = Enumerable.Range(0, 10).ToList();
         // リストからランダムに４つ選ぶ
-        var randomDigits = digits.OrderBy(x => random.Next()).Take(4).ToArray();
+        randomDigits = digits.OrderBy(x => random.Next()).Take(4).ToArray();
 
         numberStr = string.Join("", randomDigits);
+        Debug.Log(numberStr);
 
-        // Textに反映
+    }
+
+    public void ShowAnswer()
+    {
+                // Textに反映
         number1Text.text = randomDigits[0].ToString();
         number2Text.text = randomDigits[1].ToString();
         number3Text.text = randomDigits[2].ToString();
         number4Text.text = randomDigits[3].ToString();
 
     }
-
+/*
     public void OnClickNumberButton()
     {
         Debug.Log("４桁の数が生成されました");
         CreateNumber();
     }
+*/
 
 }

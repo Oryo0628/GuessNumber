@@ -7,10 +7,11 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private GameObject gameEndView;
+    [SerializeField] private GameObject gameView;
     [SerializeField] private Text numberText;
     [SerializeField] private Text hitblowText;
     [SerializeField] private NumberGenerator numberGenerator;
-    [SerializeField] private GameObject ClearPanel;
     [SerializeField] private ShowNumber showNumber;
     public Text NumberText => numberText;
     void Init()
@@ -38,7 +39,9 @@ public class GameManager : MonoBehaviour
 
     public void GameClear()
     {    
-        ClearPanel.SetActive(true);
+        numberGenerator.ShowAnswer();
+        gameEndView.SetActive(true);
+        gameView.SetActive(false);
         numberText.text = "";
     }
 
@@ -89,4 +92,6 @@ public class GameManager : MonoBehaviour
 
         return (hits, blows);
     }
+
+    
 }
