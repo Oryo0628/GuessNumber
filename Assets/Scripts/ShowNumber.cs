@@ -13,4 +13,12 @@ public class ShowNumber : MonoBehaviour
         Instantiate(numberTextPrefab, transform);
         
     }
+
+    public void Reset()
+    {
+        foreach (Transform child in gameObject.transform)
+        {
+            GameObject.Destroy(child.gameObject);
+        }
+    }
 }

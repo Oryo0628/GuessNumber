@@ -1659,7 +1659,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &579172625
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1882,6 +1882,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TitleView: {fileID: 579172624}
   GameView: {fileID: 560044966}
+  gameManager: {fileID: 1443045286}
 --- !u!114 &622421616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4046,6 +4047,11 @@ MonoBehaviour:
   gameView: {fileID: 560044966}
   numberText: {fileID: 291597871}
   hitblowText: {fileID: 1835549832}
+  numberTextList:
+  - {fileID: 1210410398}
+  - {fileID: 1267343372}
+  - {fileID: 2093210520}
+  - {fileID: 924000285}
   numberGenerator: {fileID: 1360094308}
   showNumber: {fileID: 1852999259}
 --- !u!1 &1485937842
@@ -4063,7 +4069,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1485937843
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5319,7 +5325,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 16}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2073791240
 MonoBehaviour:

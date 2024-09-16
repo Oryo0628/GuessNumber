@@ -11,19 +11,20 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject gameView;
     [SerializeField] private Text numberText;
     [SerializeField] private Text hitblowText;
+    [SerializeField] private List<Text> numberTextList;
     [SerializeField] private NumberGenerator numberGenerator;
     [SerializeField] private ShowNumber showNumber;
     public Text NumberText => numberText;
-    void Init()
+    public void Init()
     {
         numberText.text = "";
         hitblowText.text = "";
         numberGenerator.CreateNumber();
-    }
-
-    void Start()
-    {
-        Init();
+        foreach (Text number in numberTextList)
+        {
+            number.text = "?";
+        }
+        showNumber.Reset();
     }
 
     void Update()
